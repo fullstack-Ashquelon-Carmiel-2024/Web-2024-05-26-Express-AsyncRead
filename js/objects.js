@@ -233,6 +233,7 @@ console.log(`student1StaticValues=\n`,student1StaticValues);
 /*********************************************
  * TWO IMPORTANT THEMES:
  * 1. primitive vs compound values
+ * ( Primitive: undefined, null, bulean, string, number )
  * 2. by value vs by reference (parameters of functions)
  *************************************************************/
 /* const student1StaticEntries = student1Entries.filter(entry => {
