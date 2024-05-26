@@ -36,10 +36,10 @@ we should check reviews: for
 ------------------------------------------
 the hosting
 ------------------------------------------
-https://de10.fcomet.com:2083/ - this is an address of CPanel
-science3
-Yalla123456!
-https://panda.scienceart.co.il/ - this is our domain name
+https://de1.fcomet.com:2083/ - this is an address of CPanel
+knowled6
+Spontani234!
+https://panda.knowledger.guru/ - this is our domain name
 
 
 
@@ -47,11 +47,11 @@ to put files for the main domain we put them into public_html
 or into public_html/some_folder
 
 example for seeing site from the folder public_html/pizza:
-https://scienceart.co.il/pizza/
+https://knowledger.guru/pizza/
 ------------------------------------------------
 
 We will use our subdomain
-https://panda.scienceart.co.il/
+https://panda.knowledger.guru/
 
 We create directories by names inside the directory "panda",
 for example, panda/natalie/pizza
@@ -59,14 +59,14 @@ for example, panda/natalie/pizza
 we put there our files, and now we can see
 the pizza site for example here:
 
-https://panda.scienceart.co.il/natalie/pizza
+https://panda.knowledger.guru/natalie/pizza
 
 -----------------------------------------------
 to upload homework
 -----------------------------------------------
-1. go to the hosting -> file manager -> webdev202206 -> your-name
+1. go to the hosting -> file manager -> panda -> your-name
 2. create today dir, put there the homework
-3. check it at https://panda.scienceart.co.il/your-name
+3. check it at https://panda.knowledger.guru/your-name
 4. at the classroom respond to the mission with the link
 
 -----------------------------------------------
@@ -75,7 +75,7 @@ FTP - File Transfer Protocol
 or FTP program like FileZilla
 or browser FTP extension 
 
-Host: de10.fcomet.com
-Username: science3
-Password: Yalla123456!
+Host: de1.fcomet.com
+Username: knowled6
+Password: Spontani234!
 Port: 22 (not needed, it is a default)
