@@ -200,12 +200,34 @@ console.log(`student1Entries=\n`,student1Entries);
 console.log('\n********\nStudent1:\n**********\n')
 student1Keys.forEach((key,ind) => {
     console.log(`The key number ${ind+1} is ${key}
-                 and it's value is ${student1[key]}`)
+    and it's value is ${student1[key]}`)
 })
 
 /** MISSION:
  * Go over student1Entries and get the same result as 
  * in the previous action without performing ${student1[key]}
+*/
+
+console.log('\n********\nStudent1 (from Entries):\n**********\n')
+student1Entries.forEach((entry,ind) => {
+    console.log(`The key number ${ind+1} is ${entry[0]}
+    and it's value is ${entry[1]}`)
+})
+
+// Our target is to filter student1Values to get only
+// the static properties (not functions)
+
+const student1StaticValues = student1Values.filter(val => {
+    
+    return typeof val !== 'function'
+    
+})
+
+console.log(`student1StaticValues=\n`,student1StaticValues);
+
+/** MISSION:
+ * create new array student1StaticEntries - filter student1Entries
+ * to get only static properties (with values)
  */
 
 
