@@ -4,6 +4,7 @@ const student1 = {
     firstName: 'Johnny',
     lastName: 'Depp',
     grades: [73, 80, 95, 66, 78],
+    age: 50,
     showFullName: function(reverse) { // if true 'Depp, Johnny', if false 'Johnny Depp'
 
 /*         if (reverse) {
@@ -229,5 +230,63 @@ console.log(`student1StaticValues=\n`,student1StaticValues);
  * create new array student1StaticEntries - filter student1Entries
  * to get only static properties (with values)
  */
+/*********************************************
+ * TWO IMPORTANT THEMES:
+ * 1. primitive vs compound values
+ * 2. by value vs by reference (parameters of functions)
+ *************************************************************/
+/* const student1StaticEntries = student1Entries.filter(entry => {
+    
+    return typeof entry[1] !== 'function'
+    
+}) */
+student1Entries.filter(entry => typeof entry[1] !== 'function')
+               .map(entry => `entry ${entry[0]} is ${entry[1]}`)
+               .forEach(str => {
+                // String - is a primitive value. It's IMMUTABLE
+                str.replace('e','E')
+                str[0] = 'E'
+                // in the next row we are not attempting to change,
+                // but replace the old primitive value by new one
+                str = str.replace('e','E')
+                console.log(str)
+                console.log(str.length)
+               })
 
+//console.log(`student1StaticEntries=\n`,student1StaticEntries);
 
+console.log('BEFORE\n*****')
+console.log(`student1StaticValues=\n`,student1StaticValues);
+student1StaticValues.forEach((value,ix) => {
+    if (typeof value === 'string') {
+        value = value.toUpperCase() // changes only the value
+        student1StaticValues[ix] = value.toUpperCase() // changes the array
+        console.log(`value = ${value}`)
+    } else if (typeof value === 'number') {
+        value++; //works because of value++ is like value = value+1
+        console.log(`age = ${value}`) // by value
+        //student1StaticValues[ix] = value // changes the array
+    } else {
+        value[0] = 100
+    }
+})
+console.log('AFTER\n*****')
+console.log(`student1StaticValues=\n`,student1StaticValues);
+
+function calc1(result,n1,n2,n3) {
+    result = (n1 - n2) * n3
+    globalResult = result
+}
+
+function calc2(resultObj,n1,n2,n3) {
+    resultObj.result = (n1 - n2) * n3
+}
+
+let n1 = 10, n2 = 2, n3 = 15, result = 0, globalResult = 0;
+const resultObj = {}
+
+calc1(result,n1,n2,n3)
+calc2(resultObj,n1,n2,n3)
+console.log(`result=${result}`)
+console.log(`globalResult=${globalResult}`)
+console.log(`resultObj = \n`,resultObj)
