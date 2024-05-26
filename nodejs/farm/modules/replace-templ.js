@@ -14,7 +14,18 @@
 
 module.exports = function(templ, obj) {
 
-    return templ.replaceAll('%*PRODUCTNAME*%',obj.productName)
-                .replaceAll('%*IMAGE*%',obj.image);
+    /* return templ.replaceAll('%*PRODUCTNAME*%',obj.productName)
+                .replaceAll('%*IMAGE*%',obj.image)
+                .replaceAll('%*PRICE*%',obj.price)
+                .replaceAll('%*DESCRIPTION*%',obj.description)
+                ; */
+    let newStr = templ;
+    const entries = Object.entries(obj);
+    entries.forEach(entry => {
 
+      newStr = newStr.replaceAll(`%*${entry[0].toUpperCase()}*%`,entry[1])
+
+    })
+
+    return newStr;
 }
