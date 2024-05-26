@@ -99,7 +99,13 @@ console.log(quotes[0])
 //  - run the function with "onclick" or eventListener
 //    on the button "Is this a Palindrome?"
 
+let hebStr = 'ילד כותב בתוך דלי'
+let newStr = hebStr.replaceAll('ם','מ')
+                   .replaceAll('ן','נ')
+                   .replaceAll(' ','')
+                   
 /** FOR GEMATRIA */
+
 
 // T.B.D.
 ////////////////////////////////

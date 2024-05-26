@@ -1310,5 +1310,19 @@ Create farm/public/icons directory
 and farm/public/assets/img directory
 and put there the mayonaise image file
 
+41.
 
+
+
+
+
+
+/**** Start NodeJS server on the hosting ***/
+
+1. NodeJS
+2. Create Application
+3. Fill the form (example in notes/DeployNodeJS01.png)
+4. Start 
+5. NPM install
+6. Restart
 

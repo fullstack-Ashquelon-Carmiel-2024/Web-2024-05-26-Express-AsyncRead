@@ -5,9 +5,10 @@ const path = require('path');
 const replaceTempl = require('./modules/replace-templ');
 
 /***** Our Variables *****/
-let port = 3051;
+let port = process.env.PORT ? process.env.PORT : 3051;
 let dataDir = 'data';
 let templDir = 'templates';
+let hostingDir = '/natalie/farm';
 
 /***** Reading the Files *****/
 let dataJSON = fs.readFileSync(path.join(__dirname,dataDir,'data.json'),'utf-8');
@@ -27,7 +28,7 @@ const app = express();
 app.use(express.static(path.join(__dirname,'public')));
 
 /***** Router *****/
-app.get('/',(req,res) => {
+app.get(['/',`${hostingDir}/`],(req,res) => {
     
     res.send(`<h1>Sweet, Sweet Home of EXPRESS Server😀</h1>`)
     
@@ -56,7 +57,7 @@ app.get('/carrot',(req,res) => {
     
 })
 
-app.get('/product/:id',(req,res) => {
+app.get(['/product/:id',`${hostingDir}/product/:id`],(req,res) => {
     
     console.log('req.params:\n',req.params)
     let id = req.params.id;
