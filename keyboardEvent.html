@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 2rem;
+        }
+
+        #txt1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .out {
+            display: flex;
+        }
+
+        .out > * {
+            width: 15rem;
+            min-height: 20rem;
+            border: 2px solid green;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <input type="text" id="txt1">
+
+    <div class="out">
+        <div class="out1"></div>
+        <div class="out2"></div>
+    </div>
+
+    <script>
+
+        const inp = document.querySelector('#txt1');
+        const out = document.querySelectorAll('.out > *');
+
+        function capEvent(e) {
+
+
+        }
+
+        function whichKey(e) {
+
+                out[1].innerText = ``
+        }
+
+        
+
+    </script>
+
+</body>
+</html>
