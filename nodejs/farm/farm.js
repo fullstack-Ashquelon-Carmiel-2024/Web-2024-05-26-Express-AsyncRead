@@ -1,18 +1,23 @@
 const express = require('express');
 const fs = require('fs');
+const path = require('path');
 
 const replaceTempl = require('./modules/replace-templ');
 
 /***** Our Variables *****/
 let port = 3051;
+let dataDir = 'data';
+let templDir = 'templates';
 
-
+console.log(`__dirname: \n${__dirname}`)
 /***** Reading the Files *****/
-let dataJSON = fs.readFileSync('./data/data.json','utf-8');
+let dataJSON = fs.readFileSync(path.join(__dirname,dataDir,'data.json'),'utf-8');
 const dataAr = JSON.parse(dataJSON);
 
-let productTempl = fs.readFileSync('./templates/productTempl.html','utf-8');
-let product404Templ = fs.readFileSync('./templates/404ProductTempl.html','utf-8');
+let productTempl = fs.readFileSync(
+    path.join(__dirname,templDir,'productTempl.html'),'utf-8');
+let product404Templ = fs.readFileSync(
+    path.join(__dirname,templDir,'404ProductTempl.html'),'utf-8');
 
 /***** Create the Server *****/
 // Create the server of express.
