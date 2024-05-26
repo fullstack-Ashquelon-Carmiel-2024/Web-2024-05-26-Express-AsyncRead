@@ -12,6 +12,7 @@ let dataJSON = fs.readFileSync('./data/data.json','utf-8');
 const dataAr = JSON.parse(dataJSON);
 
 let productTempl = fs.readFileSync('./templates/productTempl.html','utf-8');
+let product404Templ = fs.readFileSync('./templates/404ProductTempl.html','utf-8');
 
 /***** Create the Server *****/
 // Create the server of express.
@@ -51,8 +52,11 @@ app.get('/carrot',(req,res) => {
 app.get('/product/:id',(req,res) => {
     
     console.log('req.params:\n',req.params)
-    
-    res.send(replaceTempl(productTempl, dataAr[req.params.id]));
+    let id = req.params.id;
+
+    0 <= id && id < dataAr.length ?
+        res.send(replaceTempl(productTempl, dataAr[id])) :
+        res.status(404).send(product404Templ);
     /* res.send(productTempl.replaceAll('%*PRODUCTNAME*%',dataAr[req.params.id].productName)
     .replaceAll('%*IMAGE*%',dataAr[req.params.id].image)); */
     
