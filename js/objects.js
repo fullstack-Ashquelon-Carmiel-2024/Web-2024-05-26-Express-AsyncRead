@@ -189,7 +189,23 @@ const yesterday = new Date('2024-04-17');
 let currYear = currDate.getFullYear();
 let currWeeekDay = currDate.getDay();
 
+const student1Keys = Object.keys(student1);
+const student1Values = Object.values(student1);
+const student1Entries = Object.entries(student1);
 
+console.log(`student1Keys=\n`,student1Keys);
+console.log(`student1Values=\n`,student1Values);
+console.log(`student1Entries=\n`,student1Entries);
 
+console.log('\n********\nStudent1:\n**********\n')
+student1Keys.forEach((key,ind) => {
+    console.log(`The key number ${ind+1} is ${key}
+                 and it's value is ${student1[key]}`)
+})
+
+/** MISSION:
+ * Go over student1Entries and get the same result as 
+ * in the previous action without performing ${student1[key]}
+ */
 
 
