@@ -27,5 +27,7 @@ module.exports = function(templ, obj) {
 
     })
 
+    newStr = newStr.replaceAll('%*NOTORGANIC*%',obj.organic ? '' : 'not-organic');
+
     return newStr;
 }

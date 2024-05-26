@@ -18,6 +18,10 @@ let productTempl = fs.readFileSync(
     path.join(__dirname,templDir,'productTempl.html'),'utf-8');
 let product404Templ = fs.readFileSync(
     path.join(__dirname,templDir,'404ProductTempl.html'),'utf-8');
+let homeTempl = fs.readFileSync(
+    path.join(__dirname,templDir,'homeTempl.html'),'utf-8');
+let figureTempl = fs.readFileSync(
+    path.join(__dirname,templDir,'figureTempl.html'),'utf-8');
 
 /***** Create the Server *****/
 // Create the server of express.
@@ -30,7 +34,8 @@ app.use(express.static(path.join(__dirname,'public')));
 /***** Router *****/
 app.get(['/',`${hostingDir}/`],(req,res) => {
     
-    res.send(`<h1>Sweet, Sweet Home of EXPRESS Server😀</h1>`)
+    let figureList = dataAr.map(obj => replaceTempl(figureTempl,obj)).join('');
+    res.send(homeTempl.replace('%*FIGURELIST*%',figureList))
     
 })
 

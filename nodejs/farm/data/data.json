@@ -64,5 +64,16 @@
     "price": "4.50",
     "organic": true,
     "description": "Our mayonaise is the most tasty mayonaise in the world. And it is very dietetic."
+  },
+  {
+    "id": 6,
+    "productName": "Beautiful Eggplant",
+    "image": "🍆",
+    "from": "Israel",
+    "nutrients": "Vitamin C, Magnesium",
+    "quantity": "2 🍆",
+    "price": "3.50",
+    "organic": true,
+    "description": "Kids don't like eggplant usually. But try our's or the 'Ovad's' sabich"
   }
 ]
