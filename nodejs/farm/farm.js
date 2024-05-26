@@ -9,7 +9,6 @@ let port = 3051;
 let dataDir = 'data';
 let templDir = 'templates';
 
-console.log(`__dirname: \n${__dirname}`)
 /***** Reading the Files *****/
 let dataJSON = fs.readFileSync(path.join(__dirname,dataDir,'data.json'),'utf-8');
 const dataAr = JSON.parse(dataJSON);
@@ -23,6 +22,9 @@ let product404Templ = fs.readFileSync(
 // Create the server of express.
 // Traditionally we call it "app".
 const app = express();
+
+/***** MIDDLEWARE *****/
+app.use(express.static(path.join(__dirname,'public')));
 
 /***** Router *****/
 app.get('/',(req,res) => {

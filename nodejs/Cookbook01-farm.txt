@@ -1304,5 +1304,11 @@ let productTempl = fs.readFileSync(
 let product404Templ = fs.readFileSync(
     path.join(__dirname,templDir,'404ProductTempl.html'),'utf-8');
 
-40.
+40. Add to data.json entry for mayonaise product
+
+Create farm/public/icons directory
+and farm/public/assets/img directory
+and put there the mayonaise image file
+
+
 
